@@ -1,0 +1,191 @@
+/* -----------------------------------------------------------------------------
+// This file contains styles that are specific to the Services page.
+// -----------------------------------------------------------------------------
+*/
+
+/* =Services Styles
+-------------------------------------------------------------- */
+
+.services-wrap {
+  width: 100%;
+  .description {
+    padding: 52px 0;
+    .title-description {
+      h4 {
+        line-height: 28px;
+      }
+    }
+    .subtitle {
+      p {
+        @include font-size-rem(18px);
+        font-family: $roboto-font;
+        line-height: 24px;
+        letter-spacing: 0.04em;
+        font-weight: 400;
+      }
+    }
+    p {
+
+    }
+  }
+  .bg-img {
+    position: relative;
+    -webkit-animation-duration: 1s;
+    &:before{
+      height: 100%;
+      width: calc(100% - 50px);
+      background-color: #b1b1b1;
+      position: absolute;
+      content: '';
+      top: -10px;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+    .img {
+      position: relative;
+      width: 100%;
+    }
+  }
+}
+
+.services-list-wrap {
+  position: relative;
+  width: 100%;
+  background: $soft-gray-10;
+  height: 100%;
+  @extend .padding-top-bottom-80;
+  .services-list {
+    float: left;
+    .services-icon {
+      span {
+        @include font-size-rem(24px);
+      }
+    }
+    h6 {
+      font-weight: bold;
+      padding: 10px 0 40px 0;
+    }
+    p {
+      padding-bottom: 50px;
+    }
+  }
+}
+
+.more-services-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  .bg-image {
+    width: 100%;
+    height: 496px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .description-more--services {
+    .title-description--more-services {
+      padding: 0 0 45px 0;
+      h4 {
+        line-height: 28px;
+      }
+    }
+    .subtitle {
+      p {
+        @include font-size-rem(18px);
+        font-family: $roboto-font;
+        line-height: 24px;
+        letter-spacing: 0.04em;
+        font-weight: 400;
+      }
+    }
+  }
+  .bg-light {
+    .bg-white {
+      border: 2px solid $soft-gray-10;
+      padding: 20px;
+      height: 100%;
+    .more-services--icon {
+        span {
+          @include font-size-rem (24px);
+          line-height: 24px;
+        }
+        p {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+.price-table-wrap {
+  position: relative;
+  width: 100%;
+  background: $soft-gray-10;
+  @extend .padding-top-bottom-80;
+  .price-item {
+    background: $white;
+    position: relative;
+    transition: all 400ms ease-in-out;
+    z-index: 1;
+    @include on-event ($self:false) {
+      -webkit-transition: all 400ms ease-in-out;
+      -webkit-transform: scale(1.02);
+      -ms-transition: all 400ms ease-in-out;
+      -ms-transform: scale(1.02);   
+      -moz-transition: all 400ms ease-in-out;
+      -moz-transform: scale(1.02);
+      transition: all 400ms ease-in-out;
+      transform: scale(1.02);
+      -webkit-box-shadow: 0px 0px 28px -7px rgba(32,32,32,1);
+      -moz-box-shadow: 0px 0px 28px -7px rgba(32,32,32,1);
+      box-shadow: 0px 0px 28px -7px rgba(32,32,32,1);
+    }
+    .info-tittle {
+      position: relative;
+      top: 24px;
+      left: 10px;
+      @include font-size-rem (12px);
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      &:after {
+        position: absolute;
+        background: $soft-gray-10;
+        top: -17px;
+        left: 0;
+        content: " ";
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        z-index: -1;
+      }
+    }
+    .price {
+      @include font-size-rem (24px);
+      letter-spacing: 0.16em;
+      line-height: 24px;
+      padding: 50px 0 70px 0;
+      font-family: $montserrat-font;
+      .dolar {
+        @include font-size-rem (48px);
+        font-family: $roboto-font;
+        position: relative;
+        top: 20px;
+        font-weight: 300;
+      }
+    }
+    .details {
+     text-align: center;
+     font-family: $roboto-font;
+      li {
+        letter-spacing: 0.04em;
+        line-height: 24px;
+        padding: 10px 0;
+        color: $light-gray;
+        font-weight: 500;
+      }
+    } 
+  }
+}

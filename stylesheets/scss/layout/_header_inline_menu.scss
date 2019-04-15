@@ -1,0 +1,109 @@
+/*// -----------------------------------------------------------------------------
+// This file contains all styles related to the Header_1 of the site/application.
+// -----------------------------------------------------------------------------
+*/
+
+/* =Header_1 Styles
+-------------------------------------------------------------- */
+
+.header {
+	.logo-pr {
+		margin-top: 35px;
+		float: left;
+	}
+	.menu-pr {
+	   float: right;
+	   margin-top: 40px;
+	    .menu-content-pr {
+		  	.menu-list-pr {
+		  		ul {
+		  			padding: 0;
+		  			li {
+		  				display: inline-block;
+		  				padding: 0 20px;
+		  				a {
+	                      color: $black;
+	                      @include font-size-rem(14px);
+	                      font-weight: 400;
+	                      font-family: $montserrat-font;
+	                      letter-spacing: 0.04em;
+	                      @include on-event ($self: false) {
+	                      	color: $light-gray;
+	                      }
+		  				}
+		  			}
+		  		}
+		  		.dropdown {
+		  			padding-bottom: 30px;
+		            .dropdown-menu {
+		            	background: $soft-gray;
+		            	border: 0;
+		            	border-radius: 0;
+		            	box-shadow: none;
+		            	top: 30px;
+		            	padding: 15px 0;
+		                li {
+		                    a {
+			                    font-weight: 300;
+			                    color: $gray;
+                    			font-family: $roboto-font;
+			                    padding:3px 0 10px 10px;               
+			                    letter-spacing: inherit;
+			                    text-transform: inherit;
+			                    @include font-size-rem(14px);
+		                        @include on-event($self: false) {
+			                        background-color: transparent;
+			                        color: $black;
+			                        display: block;
+		                        }
+		                    }
+		                }
+		            }
+		        }
+		        .dropdown:hover .dropdown-menu {
+		          display: block;
+		          -webkit-box-shadow: 0px 3px 15px 1px rgba(173,173,173,0.7);
+				  -moz-box-shadow: 0px 3px 15px 1px rgba(173,173,173,0.7);
+				  box-shadow: 0px 3px 15px 1px rgba(173,173,173,0.7);
+		        }
+		  	}
+	    }
+	}
+	.open-search-pr {
+	    position: relative;
+	    float: right;
+	    margin: 40px 0;
+	    background: transparent;
+	    border: 0;
+	    outline: none;
+	    span {
+	    	@include font-size-rem (18px);
+	    	color: $black;
+	    }  
+	}	
+}
+
+@include breakpoint(md_down) {
+	.header {
+		.logo-pr {
+			img {
+			    width: 70%;
+			    margin-top: 7px;
+			}
+		}
+		.menu-pr {
+		    .menu-content-pr {
+			  	.menu-list-pr {
+			  		ul {
+			  			li {
+			  				padding: 0 12px;
+			  				a {
+		                      @include font-size-rem(12px);
+			  				}
+			  			}
+			  		}
+			  	}
+		    }
+		}
+	}		
+}

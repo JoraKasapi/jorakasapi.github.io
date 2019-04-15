@@ -1,0 +1,369 @@
+/* -----------------------------------------------------------------------------
+// This file contains styles that are specific to the Portfolio page.
+// -----------------------------------------------------------------------------
+*/
+
+/* =About Styles
+-------------------------------------------------------------- */
+
+/* ABOUT WRAP */
+.about-wrap {
+  width: 100%;
+  height: 100%;
+  .main-title {
+    background: url("/img/about/logo.png") center center no-repeat;
+    width: 100%;
+    height: 84px;
+    padding: 30px 0;
+  }
+  .description-about {
+    p {
+      letter-spacing: 0.04em;
+      margin-bottom: 40px;
+    }
+    .subtitle {
+      p {
+        @include font-size-rem(18px);
+        font-family: $roboto-font;
+        line-height: 26px;
+        letter-spacing: 0.04em;
+        font-weight: 300;
+      }
+    } 
+  }
+}
+
+/* OUR STUDIO WRAP */
+.our-studio-wrap {
+  width: 100%;
+  position: relative;
+  top: 0;
+  text-align: center;
+  margin-bottom: 30px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate3d(0,0,0);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  @extend .padding-top-bottom;
+    .bg-white {
+      background: $white;
+      width: 100%;
+      position: relative;
+     .box-content {
+      padding: 40px 84px;
+      h4 {
+        margin-bottom: 40px;
+      }
+      p {
+        text-align: left;
+        letter-spacing: 0.04em;
+        z-index: 100;
+        position: relative;
+      }
+      .sub{
+        @include font-size-rem(12px);
+        letter-spacing: 0.16em;
+        font-weight: 600;
+        text-align: left;
+        display: block;
+        margin-top: 30px;
+        margin-bottom: 20px;      
+      }
+    }
+  }
+  .bg-image {
+    width: 100%;
+    height: 522px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+/* CLIENTS WRAP */
+.clients-wrap {
+  width: 100%;
+  ul {
+    padding: 0;
+    li {
+      display: inline-block;
+      width: calc(100% / 4);
+      float: left;
+      text-align: center;
+      position: relative;
+      margin-bottom: 100px;
+      &:nth-child(4n+5) {
+        clear: both;
+      }
+      &:not(:nth-child(4n)):after {
+        content: '';
+        width: 82px;
+        height: 1px;
+        position: absolute;
+        top: 15px;
+        right: -34px;
+        margin: 0 auto;
+        background: $black;
+        -webkit-transform: rotate3d(0,0,1,45deg);
+        transform: rotate3d(0,0,1,-45deg);
+        -webkit-transition: -webkit-transform 0.5s;
+        transition: transform 0.5s;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: auto;
+      }
+    }
+  }
+}
+
+.client-say-wrap { 
+  width: 100%;
+  position: relative;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  @extend .padding-top-bottom;
+  .owl-carousel {
+    .owl-pagination {
+      counter-reset: slides-num; /* Initialize counter. */ 
+      position: absolute;
+      top: 100%;
+      left: 20px;
+      margin-top: 15px;
+      width: 65px;
+      &:after {
+        content: counter(slides-num); /* get total number of items - more info on http://www.sitepoint.com/a-little-known-way-to-replace-some-scripts-with-css-counters/ */ 
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 400;
+        vertical-align: middle;
+        padding-left: 0;
+        position: absolute;
+        left: 26px;
+        font-family: "Tahoma";
+      }
+    }
+    .owl-page {
+      display: inline-block;
+      counter-increment: slides-num; /* Increment counter */
+      margin-right: 5px;
+      span {
+        display: none;
+      }
+      &.active {
+        &:before {
+          content:  counter(slides-num)"/"; /* Use the same counter to get current item. */
+          display: inline-block;
+          vertical-align: middle;
+          font-size: 18px;
+          position: absolute;
+          font-weight: 400;
+          left: 0;
+          top: 0;
+          letter-spacing: 0.16em;
+          font-family: "Tahoma";
+        }
+      }
+    }
+    .item {
+      // padding-top: 100px;
+      h4 {
+        letter-spacing: 0.04em;
+        line-height: 0;
+      }
+      .client-positon {
+        @include font-size-rem (14px);
+        letter-spacing: 0.04em;
+      }
+      p {
+        padding-top: 50px;
+        color: $black;
+        font-weight: 400;
+        letter-spacing: 0.04em;
+        line-height: 24px;
+      }
+    }
+    .pos-rel {
+      position: relative;
+      top: 12px;
+    }
+    .pos-abs {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -2%;
+      font-size: 60px;
+      z-index: -1;
+      margin: 0 auto;
+      color: white;
+    }
+  }
+  .owl-buttons {
+    position: absolute;
+    right: 40px; 
+  }
+  .owl-theme .owl-controls .owl-buttons div {
+    font-size: 30px;
+    background: transparent;
+    color: $black;
+    padding: 0;
+  }
+}
+
+
+#owl-demo .owl-controls .owl-buttons div {
+  font-size: 30px;
+  background: transparent;
+  color: $black;
+  padding: 0;
+} 
+.owl-prev {
+    position: absolute;
+    left: 0;
+    top: 36%;
+}
+.owl-next {
+    position: absolute;
+    right: 0;
+    top: 36%;
+}
+#owl-demo {
+  .owl-pagination {
+    display: none;
+  }
+  .item {
+    margin:0 70px;
+  }
+  .owl-wrapper-outer {
+    padding-bottom: 27px;
+  }
+}
+
+.team-wrap {
+   width: 100%;
+  .team-member {
+    position: relative;
+    overflow: hidden;
+  }
+  .hover-overlay--team {
+    display: table;    
+  }
+  .hover-overlay--team-inner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    opacity: 0;
+    transition:all .5s ease-out;
+    @include on-event($self: false) {
+      opacity: 0.8;
+      background: -webkit-linear-gradient(top, rgb(207, 230, 247) 0%, rgb(255, 254, 255) 100%);
+      background: -o-linear-gradient(top, rgb(207, 230, 247) 0%, rgb(255, 254, 255) 100%);
+      background: -ms-linear-gradient(top, rgb(207, 230, 247) 0%, rgb(255, 254, 255) 100%);
+      background: -moz-linear-gradient(top, rgb(207, 230, 247) 0%, rgb(255, 254, 255) 100%);
+      background: linear-gradient(to bottom, rgb(207, 230, 247) 0%, rgb(255, 254, 255) 100%);
+    }
+  }
+  .member-info {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    padding: 0 20px;
+    .social-media {
+      padding: 20px 0 0;
+    }
+    ul {
+        li {
+          display: inline;
+          padding: 5px;
+          a {
+            color: $gray;
+        }
+      }
+    }
+    h6{
+      @include font-size-rem(12px);
+      color: $black;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      margin-bottom: 0;
+    }
+    .date {
+      clear: both;
+    }
+    p {
+      color: $black;
+      @include font-size-rem (12px);
+      letter-spacing: 0.04em;
+      line-height: 18px;
+      padding: 8px 0 0;  
+    }
+  }
+  .member-info ul li:not(:last-child)::after{
+      position: absolute;
+      content: '';
+      border-right: 1px solid $gray;
+      height: 18px;
+      padding-left: 6px; 
+  }
+  .position-team {
+    background: $soft-gray-10;
+    position: absolute;
+    bottom: -22px;
+    right: 43px;
+    padding: 7px 40px;
+  }
+}
+
+.fun-facts-wrap  {
+  width: 100%;
+  position: relative;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  @extend .padding-top-bottom;
+  .overlay {
+    background: $soft-gray;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0.9;  
+  }
+  .info-facts {
+    .count {
+      line-height: 100px;
+      color:black;
+      font-size:25px;
+      letter-spacing: 0.16em;
+    }
+  }
+}
+ 

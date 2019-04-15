@@ -1,0 +1,61 @@
+/*
+    Name: web
+    Version: 1.0
+    Author: Prishtina
+    Author URI: http://www.eGothix.com
+*/
+
+/* =Table of Contents
+--------------------------------------------------------------
+    /* =Buttons
+    /* =Forms
+    /* =Loader
+    /* =Elements
+    /* =Footer
+    /* =Header    
+    /* =Header Inline Menu
+    /* =Header Light
+    /* =Nav Mobile
+    /* =Home 
+    /* =Home Slider
+    /* =About
+    /* =Services 
+    /* =Portfolio
+    /* =Portfolio Single 
+    /* =Blog
+    /* =Blog With Sidebar
+    /* =Single Blog 
+    /* =Single Blog With Sidebar
+    /* =Contact
+
+--------------------------------------------------------------
+
+/* =Common Styles
+-------------------------------------------------------------- */
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;    
+    position: relative;
+}
+
+::selection {
+    background: #060606;
+    color: $white;
+}
+::-moz-selection {
+    background: #060606;
+    color: $white;
+}
+
+:root {
+    font-size: 16px;
+}
+
+
+

@@ -1,0 +1,380 @@
+/*// -----------------------------------------------------------------------------
+// This file contains all styles related to the Header of the site/application.
+// -----------------------------------------------------------------------------
+*/
+
+/* =Header Styles
+-------------------------------------------------------------- */
+
+/* HEADER */
+.header {
+	position: relative;
+  height: 100px;
+  width: 100%;
+  z-index: 9;
+  transition: top 0.2s ease-in-out;
+  .logo {
+    float: left;
+    line-height: 100px;
+    margin-top: 55px;
+  }
+  /*indicator*/
+  .main-menu-indicator {
+    display: block;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 9999999999;
+    height: 62px;
+    width: 25px;
+    background: transparent;
+    outline: 0;
+    float: right;
+    position: relative;
+    margin: 35px 17px;
+    &:hover {
+      border: 0;
+      box-shadow: none;
+    }
+    > span {
+      transition: all 0.1s ease 0s;
+      display: block;
+      position: absolute;
+      width: 25px;
+      height: 2px;
+      top: 32px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background: $black;
+      &:before {
+        transition: all 0.2s ease 0s;
+        position: absolute;
+        content: '';
+        width: 25px;
+        height: 2px;
+        background: $black;
+        left: 0;
+      }
+      &:after {
+        transition: all 0.2s ease 0s;
+        position: absolute;
+        content: '';
+        width: 25px;
+        height: 2px;
+        background: $black;
+        left: 0;
+        top: -5px;
+      }
+      &:before {
+        bottom: -5px;
+      }
+    }
+    &.active > span {
+      background: transparent;
+      &:after {
+        top: 0;
+        transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -webkit-transform-origin: center center;
+        -ms-transform-origin: center center;
+        transform-origin: center center;
+        background: $white;
+     
+      }
+      &:before {
+        bottom: 0;
+        transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -webkit-transform-origin: center center;
+        -ms-transform-origin: center center;
+        transform-origin: center center;
+        background: $white;
+      }
+    }
+  }
+
+  .open-search {
+    position: relative;
+    float: right;
+    margin: 58px 0;
+    background: transparent;
+    border: 0;
+    outline: none;
+    &:after {
+      position: absolute;
+      content: '';
+      border-right: 1px solid $black;
+      height: 14px;
+      padding-left: 6px;
+      top: 3px;
+      right: -3px;
+    }
+    span {
+      @include font-size-rem (18px);
+      color: $black;
+    }  
+  }
+  .serach-input {
+    z-index: 9999999999;
+    width: 100%;
+    height: 30%;
+    left: 0;
+    background: $black;
+    position: fixed;
+    text-align: center;
+    display: table-cell;
+    opacity: 0.95;
+    display: table;
+    vertical-align: middle;
+    transition: transform 0.4s;
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    transform: translateY(-100%);
+    &.active{
+      transform: translateY(0);
+    }
+    form {
+      top: 50%;
+      position: absolute;
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+      border-bottom: 1px solid white;
+      width: 100%;
+      max-width: 583px;
+      input {
+      border: 0;
+      width: 100%;
+      max-width: 583px; 
+      background: transparent;
+      outline: none;
+      @include font-size-rem(18px);
+      letter-spacing: 0.16em;
+      color: $white;
+      margin-left: 30px;
+      margin-bottom: 5px;
+      font-family: $montserrat-font;
+      }
+    }
+  }
+  .close-search {
+    position: absolute;
+    top: 33%;
+    right: 11.7%;
+    background: transparent;
+    border: 0;
+    outline: none;
+    span {
+      @include font-size-rem (30px);
+      color: $white;
+    }   
+  }
+
+  /* MENU */
+  .menu {
+    z-index: 999999999;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background: $black;
+    position: fixed;
+    text-align: center;
+    display: table-cell;
+    opacity: 0.95;
+    display: table;
+    vertical-align: middle;
+    transition: transform 0.4s;
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    transform: translateY(-100%);
+    &.active{
+      transform: translateY(0);
+    }
+    .menu-content {
+      display: table-cell;
+      vertical-align: middle;
+      .inner-menu {
+        position: absolute;
+        top: 55px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        max-width: 1170px;
+        width: 100%;
+        ul {
+            float: left;
+            li {
+              display: inline;
+              padding: 5px;
+              a {
+                color: $white;
+            }
+          }
+        }
+        .logo-nav {
+          width: 200px;
+          margin: auto;
+          img{
+            display: block;
+            margin: auto;
+          }
+        }
+      }
+      .inner-menu ul li:not(:last-child)::after{
+        position: absolute;
+        content: '';
+        border-right: 1px solid #fff;
+        height: 18px;
+        padding-left: 6px;
+      }
+      .menu-list {
+        height: 100%;
+        width: 100vw;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        ul {
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+          list-style-image: none;
+          li {
+            display: inline-block;
+            padding: 0 25px;
+            a {
+            text-decoration: none;
+            margin: 0;
+            color: #fff;
+            width: 100%;
+            display: block;
+            height: 100%;
+            @include font-size-rem(30px);
+            font-weight: 500;
+            letter-spacing: 0.16em;
+            transition: all 350ms cubic-bezier(0.215, .61, .215, 1);
+            -webkit-transition: all 350ms cubic-bezier(0.215, .61, .215, 1);
+            -moz-transition: all 350ms cubic-bezier(0.215, .61, .215, 1);
+            -o-transition: all 350ms cubic-bezier(0.215, .61, .215, 1);
+              @include on-event ($self: false) {
+                color: $gray;
+              }
+            }
+          }
+        }
+        .dropdown {
+          .dropdown-menu {
+              background: transparent;
+              border: 0;
+              box-shadow: none;
+              padding-top: 10px;
+              li {
+                  a {
+                    font-weight: 300;
+                    color: $gray;
+                    font-family: $roboto-font;
+                    padding: 3px 0 0 10px;               
+                    letter-spacing: inherit;
+                    text-transform: inherit;
+                    letter-spacing: 0.04em;
+                    @include font-size-rem(14px);
+                    @include on-event($self: false) {
+                      background-color: transparent;
+                      color: $white;
+                      display: block;
+                    }
+                  }
+              }
+          }
+        }
+        .dropdown:hover .dropdown-menu {
+          display: block;
+        }
+      }
+      .footer-menu {
+        position: absolute;
+        bottom: 50px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        p {
+          color: $white;
+          letter-spacing: 0.16em;
+        }
+      }
+    }
+  }
+}
+
+
+/* IMG HEADER */
+.img-header { 
+  width: 100%;
+  height: calc(100vh - 40px);
+  min-height: 340px;
+  position: relative;
+  top: 0;
+  text-align: center;
+  margin-bottom: 30px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate3d(0,0,0);
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  .text-bordered {
+    @include font-size-rem(40px);
+    color: white;
+    border: 10px solid white;
+    padding: 60px 55px;
+    width: 100%;
+    max-width: 620px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    font-family: $montserrat-font;
+    text-align: left;
+    position: relative;
+    z-index: 9;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: 1;  
+  }
+  .header-title {
+    @include font-size-rem(80px);
+    color: $black;
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    &:before {
+      content: '';
+      width: 321px;
+      height: 11px;
+      position: absolute;
+      top: 40%;
+      left: calc(50% - 160px);
+      z-index: -1;
+      background: $white;
+      -webkit-transform: rotate3d(0,0,1,35deg);
+      transform: rotate3d(0,0,1,-35deg);
+      -webkit-transition: -webkit-transform 0.5s;
+      transition: transform 0.5s;
+    }
+  }
+}
+

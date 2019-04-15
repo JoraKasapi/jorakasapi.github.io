@@ -1,0 +1,173 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/* =Mixins Styles
+-------------------------------------------------------------- */
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+// On-event Usage
+
+// .sample {
+//   @include on-event($self:true or false) {
+//      text-decoration: underline;
+//   }
+// }
+
+/// Make a context based selector a little more friendly
+/// @author Hugo Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+
+// When Inside element Usage
+// .sample {
+//   opacity: 0;
+
+//   @include when-inside('.no-opacity') {
+//     visibility: hidden;
+//   }
+// }
+
+
+
+/// Responsive manager
+/// @param {String} $breakpoint - Breakpoint
+/// @requires $breakpoints
+/// @link http://sass-guidelin.es/#breakpoint-manager Sass Guidelines - Breakpoint Manager
+@mixin breakpoint($breakpoint) {
+  $query: map-get($breakpoints, $breakpoint);
+
+  @if not $query {
+    @error 'No value found for `#{$breakpoint}`. Please make sure it is defined in `$breakpoints` map.';
+  }
+
+  @media #{if(type-of($query) == 'string', unquote($query), inspect($query))} {
+    @content;
+  }
+}
+// BreakPoint Usage
+
+// .sample {
+//   font-size: 30rem;
+
+//   @include breakpoint(xs-down) {
+//     font-size: 22rem;
+//   }
+// }
+
+// VW Font Sizing with Pixel Fall Back
+@function calculateVw($size) {
+  $vwSize: (1000*.01) * 1px;
+  @return ($size/$vwSize) * 1vw;
+}
+
+@mixin font-size-vw($size) {
+  font-size: $size;
+  font-size: calculateVw($size);
+}
+
+
+
+// REM Font Sizing with Pixel Fall Back
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size-rem($size) {
+  font-size: $size;
+}
+// USAGE, Example
+// .sample {
+//   @include font-size(14px)
+// }
+
+
+// Opacity Mixin
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+// USAGE, Example
+// .sample {
+//   @include opacity(0.8)
+// }
+
+// Transition Mixin
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+// USAGE, Example
+// .sample {
+//   @include transition(all, 0.6s, ease-in-out);
+// }
+
+
+// Absolute Positioning Mixin
+@mixin abs-pos ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: absolute;
+}
+// USAGE, Example
+// .sample {
+//     @include abs-pos(10px, 10px, 5px, 15px);
+//   }
+
+@mixin bg-cover {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+// USAGE, Example
+// .sample {
+//     @include bg-cover;
+//   }
+
+@mixin cover-background($img-uri) {
+    background: url($img-uri) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

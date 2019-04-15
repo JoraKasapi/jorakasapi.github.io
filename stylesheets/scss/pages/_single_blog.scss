@@ -1,0 +1,108 @@
+/* -----------------------------------------------------------------------------
+// This file contains styles that are specific to the Single Blog page.
+// -----------------------------------------------------------------------------
+*/
+
+/* =Single Blog Styles
+-------------------------------------------------------------- */
+
+.single-blog-wrap {
+  width: 100%;
+  position: relative;
+  .blog-description {
+    .date {
+      text-align: center;
+      span {
+        @include font-size-rem (14px);
+        color: $gray;
+        letter-spacing: 0.16em;
+        font-family: $montserrat-font;
+      }
+    }
+    h4 {
+      letter-spacing: 0.04em;
+      line-height: 26px;
+      margin-bottom: 50px;
+    }
+    span {
+      @include font-size-rem (14px);
+      line-height: 24px;
+      letter-spacing: 0.16em;
+      color: $black;
+      display: block;
+    }
+  }
+  .tag-share-post {
+    border-top: 1px solid $light-gray;
+    .widget-title {
+      h6 {
+        margin-bottom: 40px;
+      }
+      ul {
+        padding: 0;
+        float: left;
+        li {
+          border: 1px solid $light-gray;
+          clear: both;
+          display: inline-block;
+          padding: 3px 15px;
+          margin-bottom: 5px;
+          transition: all 0.5s ease-in-out;
+          -webkit-transition: all 0.5s ease-in-out;
+          @include on-event($self: false) {
+          border-color: $black;
+          a {
+            color: $black;
+          }
+        }
+        a {
+          color: $light-gray;
+        }
+      }
+    }
+  }
+  .share-post {
+    h6 {
+      margin-bottom: 40px;
+    }
+    ul {
+      clear: both;
+      padding: 0;
+      margin-top: 40px;
+      li {
+          display: inline-block;
+          margin-left: -8px;
+          a {
+            color: $gray;
+            padding: 0 10px;
+            @include on-event($self: false) {
+            color: $black; 
+          }
+          i {
+            font-weight: bold;
+              &.iconmoon-facebook {
+                position: relative;
+                top: -2px;
+              }
+            } 
+          }
+        }
+      }
+    }
+  }
+  .related-posts {
+    h6 {
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .img-post {
+      span {
+        color: $gray;
+        @include font-size-rem (12px);
+        font-family: $montserrat-font;
+        letter-spacing: 0.16em;
+        font-weight: 700;
+      }
+    }
+  }
+}

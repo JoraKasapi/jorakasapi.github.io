@@ -1,0 +1,57 @@
+@charset 'UTF-8';
+
+// Configuration and helpers
+
+@import 
+  'utils/variables',
+  'utils/function',
+  'utils/mixins';
+
+/* Base
+--------------------------------------*/
+@import
+  'base/base',
+  'base/helpers',
+  'base/typography';
+
+/* Components
+--------------------------------------*/
+@import
+  'components/buttons',
+  'components/forms',
+  'components/loader',
+  'components/elements';
+
+/* Layout 
+--------------------------------------*/
+@import 
+  'layout/footer',
+  'layout/header',  
+  'layout/header_inline_menu',
+  'layout/header_light';
+
+/* Navbar style for desktop & mobile
+--------------------------------------*/
+@import
+  'others/nav-desktop',
+  'others/nav-mobile';
+
+/* Vendors
+--------------------------------------*/
+@import 
+  'vendors/bootstrap';
+
+/* Pages 
+--------------------------------------*/
+@import
+  'pages/home',
+  'pages/home_slider',
+  'pages/about',
+  'pages/services',
+  'pages/portfolio',
+  'pages/portfolio_single',
+  'pages/blog_with_sidebar',
+  'pages/single_blog',
+  'pages/single_blog_with_sidebar',
+  'pages/blog',  
+  'pages/contact';

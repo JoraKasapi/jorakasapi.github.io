@@ -1,0 +1,46 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/* =Variable Styles
+-------------------------------------------------------------- */
+
+//Fonts
+
+$montserrat-font: 'Montserrat', sans-serif;
+
+$roboto-font: 'Roboto', sans-serif !default;
+
+
+//Colors
+
+$white         : #ffffff;
+$black         : #202020;
+$soft-black    : #303030;
+$gray          : #787878;
+$light-gray    : #b1b1b1;
+$soft-gray     : #f6f6f6;
+$soft-gray-10  : #f1f1f1;
+$light-gray-20 : #e6e6e6;
+
+
+
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+/// @see {mixin} respond-to
+$breakpoints: (
+  'xs_up': (min-width: 400px),
+  'sm_up': (min-width: 768px),
+  'md_up': (min-width: 992px), 
+  'lg_up': (min-width: 1200px),
+  'lg_lg_up': (min-width: 1400px),
+
+  'xs_down': (max-width: 399px),
+  'sm_down': (max-width: 767px),
+  'md_down': (max-width: 991px),
+  'lg_down': (max-width: 1199px),
+  'lg_lg_down': (max-width: 1399px),
+) !default;
+

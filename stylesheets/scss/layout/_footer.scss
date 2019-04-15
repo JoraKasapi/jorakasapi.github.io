@@ -1,0 +1,78 @@
+/* -----------------------------------------------------------------------------
+// This file contains styles that are specific to the Footer page.
+// -----------------------------------------------------------------------------
+*/
+
+/* =Footer Styles
+-------------------------------------------------------------- */
+
+.footer {
+	width: 100%;
+	position: relative;
+	background: $soft-gray-10;
+	min-height: 150px;
+	.footer-wrap {
+	    position: relative;
+	    display: table;
+	    height: 150px;
+	    width: 100%;
+		.footer-inner {
+			display: table-cell;
+			vertical-align: middle;
+			p {
+				float: left;
+				color: $gray;
+				letter-spacing: 0.04em;
+			}
+			.social-media {
+				float: right;
+				ul {
+					li {
+						display: inline-block;
+						a {
+							color: $gray;
+							padding: 0 5px;
+								@include on-event($self: false) {
+								color: $black;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include breakpoint (md_down) {
+	.footer {
+		margin-bottom: 0;
+		.footer-wrap {
+			.footer-inner {
+				p {
+                
+				}
+				.social-media {
+
+				}
+			}
+		}
+	}
+}
+@include breakpoint (sm_down) {
+	.footer {
+		.footer-wrap {
+			.footer-inner {
+				p {
+                	text-align: center;
+                	float: none;
+				}
+				.social-media {
+                	text-align: center;
+                	float: none;
+                	margin-top: 20px;
+                	margin-right: 50px;
+				}
+			}
+		}
+	}	
+}

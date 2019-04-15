@@ -1,0 +1,60 @@
+
+/**
+ * kenburnsy - Easy to use JQuery plugin to make slideshows with Ken Burns effect
+ * @version v0.0.5
+ * @link https://github.com/ZeroOneStudio/kenburnsy
+ * @license MIT
+ */
+
+.slider-wrap {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+} 
+@media only screen and (max-width: 768px){
+    .slider-wrap, .kenburnsy .slide {
+        height: 30vh;
+    }
+}
+.kenburnsy {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 700px !important;
+}
+
+.kenburnsy.fullscreen {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1
+}
+
+.kenburnsy img {
+    display: none
+}
+
+.kenburnsy .slide {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: center center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    -webkit-transform: translatez(0);
+    transform: translatez(0);
+    -moz-transform-origin: center;
+    -ms-transform-origin: center;
+    -o-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center
+}

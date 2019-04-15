@@ -1,0 +1,114 @@
+
+/* =Typography
+-------------------------------------------------------------- */
+
+a {
+  color: #202020;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+a:focus{
+  outline: 0;
+}
+
+a:hover, a:focus {
+  color: $black;
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+em {
+  font-style: italic;
+}
+strong {
+  font-weight: 500;
+}
+small {
+  font-size: 0.8em;
+}
+p {
+  color: $gray;
+  line-height: 24px;
+  @include font-size-rem(14px);
+  font-weight: 300;
+  font-family: $roboto-font;
+  clear: both;
+  margin: 0;
+}
+hr {
+  width: 25px;
+  height: 2px;
+  background: $light-gray;
+  border-top: 0;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  clear: both;
+  float: left;
+}
+
+h1 {
+  // font-size: 24px;
+  @include font-size-rem(24px);
+}
+h2 {
+  // font-size: 22px;
+  @include font-size-rem(22px);
+}
+h3 {
+  // font-size: 20px;
+  @include font-size-rem(20px);
+}
+h4 {
+  // font-size: 18px;
+  @include font-size-rem(18px);
+}
+h5 {
+  // font-size: 16px;
+  @include font-size-rem(16px);
+}
+h6 {
+  // font-size: 14px;
+  @include font-size-rem(14px);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $montserrat-font;
+  letter-spacing: 0.16em;
+  color: $black;
+  clear: both;
+}
+span {
+  font-family: $montserrat-font;
+}
+b {
+  font-weight: 900;
+}
+blockquote {
+  margin: 50px 0 50px;
+  padding: 65px;
+  @include font-size-rem(24px);
+  line-height: 34px;
+  font-weight: 400;
+  color: $black;
+  background-color: $soft-gray-10;
+  font-family: $roboto-font;
+  position: relative;
+  border: 0;
+  &:before {
+    content: '“';
+    font-size: 80px;
+    color: $black;
+    position: absolute;
+    left: 25px;
+    top: 75px;
+  }
+}
+blockquote p {
+  display: inline;
+}

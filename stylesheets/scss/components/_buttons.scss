@@ -1,0 +1,105 @@
+/* -----------------------------------------------------------------------------
+   This file contains styles that are specific to the Buttons .
+   -----------------------------------------------------------------------------
+*/
+
+/* =Buttons Styles
+-------------------------------------------------------------- */
+
+
+.btn-wrap {
+	text-align: center;
+	padding-bottom: 40px;
+}
+.btn-prishtina {
+    border: 1px solid $light-gray;
+    display: inline-block;
+    outline: 0;
+    box-shadow: none;
+    height: auto;
+    @include font-size-rem (12px);
+    text-align: center;
+    font-weight: 400;
+    background-color: transparent;
+    padding: 15px 50px;
+    text-align: center;
+    margin: auto;
+    font-family: $montserrat-font;
+    letter-spacing: 0.16em;
+    color: $light-gray;
+    @include on-event($self: false) {
+      border-color: $black;
+      transition: .8s all ease;
+      color: $black;
+    } 
+}
+.btn-prishtina1 {
+	border: 1px solid $light-gray;
+	display: inline-block;
+    outline: 0;
+    box-shadow: none;
+    height: auto;
+    @include font-size-rem (12px);
+    text-align: center;
+    font-weight: 400;
+    background-color: transparent;
+    padding: 15px 50px;
+    text-align: center;
+    margin: auto;
+    font-family: $montserrat-font;
+    letter-spacing: 0.16em;
+    color: $light-gray;
+    @include on-event($self: false) {
+      border-color: $black;
+      transition: .8s all ease;
+      color: $black;
+    } 
+}
+
+.btn-pr {
+    background: $soft-gray-10;
+    display: block;
+    outline: 0;
+    box-shadow: none;
+    height: auto;
+    @include font-size-rem (12px);
+    text-align: center;
+    font-weight: 400;
+    padding: 23px 20px;
+    text-align: center;
+    margin: auto;
+    font-family: $montserrat-font;
+    letter-spacing: 0.16em;
+    width: 100%;
+    color: $black;
+    @include on-event($self: false) {
+      background: $black;
+      transition: .8s all ease;
+      color: $white;
+    } 
+}
+
+.btn-submit {
+    background-color: transparent;
+    outline: 0;
+    border: 1px solid $light-gray;
+    color: $light-gray;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    box-shadow: none;
+    padding: 15px 60px;
+    @include on-event ($self: false) {
+        border: 1px solid $black;
+        color: $black;
+        transition: .8s all ease;   
+    }
+}
+
+@include breakpoint (sm_down) {
+    .btn-prishtina {
+        @include font-size-rem (10px);
+        padding: 15px 30px;  
+    }
+}

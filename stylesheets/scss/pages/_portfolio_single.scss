@@ -1,0 +1,116 @@
+/* -----------------------------------------------------------------------------
+// This file contains styles that are specific to the Portfolio Single page.
+// -----------------------------------------------------------------------------
+*/
+
+/* =Portfolio Single Styles
+-------------------------------------------------------------- */
+
+.portfolio-single-wrap {
+  .bg-description {
+    background: $soft-gray-10;
+    width: 100%;
+    position: relative;
+    @extend .padding-80;
+    h6 {
+      margin-bottom: 80px;
+      @extend .dbl-lines;
+    }
+    p {
+      margin-bottom: 30px;
+    }
+  }
+  .img_single {
+    img {
+      max-width: 100%;
+    }
+  }
+  .details {
+    border: 1px solid $soft-gray-10;
+    padding: 23px 0 30px 30px;
+    .date {
+      margin-bottom: 50px;
+      h6 {
+        margin-bottom: 40px;
+        @extend .dbl-lines-details;
+      }
+      span {
+        display: block;
+        @include font-size-rem (14px);
+        color: $light-gray;
+        letter-spacing: 0.16em;
+      }
+    }
+    .category {
+      margin-bottom: 50px;
+      h6 {
+        margin-bottom: 40px;
+        @extend .dbl-lines-details;
+      }
+      ul {
+        padding: 0;
+        li {
+          display: inline-block;
+          a {
+            @include font-size-rem(14px);
+            color: $light-gray;
+            letter-spacing: 0.16em;
+          }
+        }
+      }
+    }
+    .client {
+      margin-bottom: 50px; 
+      h6 {
+        margin-bottom: 40px;
+        @extend .dbl-lines-details;
+      }
+      span {
+        display: block;
+        @include font-size-rem (14px);
+        color: $light-gray;
+        letter-spacing: 0.16em;
+      }
+    }
+    .share {
+      margin-bottom: 50px;
+      h6 {
+        margin-bottom: 40px;
+        @extend .dbl-lines-details;
+      }
+      .social-media {
+        padding: 0;
+        li {
+          display: inline;
+          padding: 5px;
+          a {
+            color: $light-gray;
+            @include on-event ($self: false) {
+              transition: .8s all ease;
+              color: $black;
+            }
+          }
+        }
+      }
+      .social-icon ul li:not(:last-child)::after{
+        position: absolute;
+        content: '';
+        border-right: 1px solid $light-gray;
+        height: 18px;
+        padding-left: 6px; 
+      }
+    }
+  }
+  .next {
+    a {
+      @include font-size-rem (18px);
+      text-align: left;
+      i {
+        position: relative;
+        font-size: 35px;
+        float: right;
+        line-height: 24px;
+      }
+    }
+  }
+}

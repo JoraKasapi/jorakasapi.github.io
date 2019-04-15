@@ -1,0 +1,115 @@
+
+/* -----------------------------------------------------------------------------
+// This file contains styles that are specific to the Home page.
+// -----------------------------------------------------------------------------
+*/
+
+/* =Home Styles
+-------------------------------------------------------------- */
+
+/* Home Studio */ 
+body.soft-black  {
+  background: $soft-gray; 
+}
+
+/* Home With No Gap */ 
+.project {
+  margin-bottom: 0 !important;
+}
+
+
+/* SECTION LINK */
+.section-link-wrap {
+  .section-link {
+    width: 100%;
+    height: calc(100vh - 40px);
+    // min-height: 340px;
+    margin-bottom: 30px;
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-transform: translate3d(0,0,0);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /* General link styles */
+    &:last-child{
+      margin-bottom: 0;
+    }
+    .link {
+      outline: none;
+      text-decoration: none;
+      position: relative;
+      display: inline-block;
+    }
+    /* Kumya */
+    .link--kumya {
+      overflow: hidden;
+      padding: 10px;
+      line-height: 1;
+      color: $black;
+      @include on-event($self: false) {
+        &:after {
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        }
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        background: $black;
+        -webkit-transform: translate3d(101%,0,0);
+        transform: translate3d(101%,0,0);
+        -webkit-transition: -webkit-transform 0.5s;
+        transition: transform 0.5s;
+        -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+        transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+      }
+      @include on-event($self: false);
+        color: $black;
+      span {
+        display: block;
+        position: relative;
+        font-family: $montserrat-font;
+        letter-spacing: 0.16em;
+        font-weight: 600;
+        @include font-size-rem(80px);
+        &:before {
+          content: attr(data-letters);
+          position: absolute;
+          color: $white;
+          left: 0;
+          overflow: hidden;
+          white-space: nowrap;
+          width: 0%;
+          -webkit-transition: width 0.5s;
+          transition: width 0.5s;
+          -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+          transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+        }            
+        @include on-event {
+          &:before {
+            width: 100%;
+          } 
+        }
+      }
+    }
+  }  
+}
+
+
+

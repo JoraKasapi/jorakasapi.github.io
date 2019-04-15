@@ -1,0 +1,204 @@
+/* -----------------------------------------------------------------------------
+// This file contains styles that are specific to the Blog page.
+// -----------------------------------------------------------------------------
+*/
+
+/* =Blog Styles
+-------------------------------------------------------------- */
+
+.blog-wrap {
+  width: 100%;
+  position: relative;
+  padding: 0 5px;
+    .blog {
+      .blog-post{
+        width: 100%;
+        float: left;
+        @extend .margin-bottom-80;
+        .bg-img {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        height: 375px;  
+        @media (md_up) and (max-width: 1328px){
+          height: 375px;
+        }
+      }
+      .descripiton-border {
+        border: 1px solid $gray;
+        border-left: 0;
+        padding: 0 20px;
+        height: 375px;
+        position: relative;
+        .date {
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: auto;
+          top: -10px;
+          background: white;
+          padding: 0 20px;
+          width: 115px;
+          font-family: $montserrat-font;
+          letter-spacing: 0.04em;
+          @include font-size-rem(14px);
+          color: $gray;
+        }
+        span {
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: auto;
+          bottom: -13px;
+          background: $white;
+          padding: 0 40px;
+          @include font-size-rem (30px);
+          width: 110px;          
+        }
+        .description {
+          h4 {
+            font-size: 14px;
+            margin-bottom: 40px;
+            font-weight: 600;
+          }
+          h6 {
+            font-family: $roboto-font;
+            font-weight: 400;
+            padding: 0;
+            margin: 0;
+            line-height: 0;
+            color: $black;
+          }
+          .read-more {
+            margin-top: 40px;
+            margin-bottom: 13px;
+          }
+        }
+      }
+
+      @include breakpoint (lg_lg_up) {
+        .bg-img {
+          background-repeat: no-repeat;
+          background-position: center center;
+          width: 100%;
+          height: 375px;  
+        }
+      }
+
+      @include breakpoint (lg_lg_up)  {
+        .descripiton-border {
+          border: 1px solid $gray;
+          border-left: 0;
+          padding: 67px 20px; 
+        }
+      }  
+
+      @include breakpoint (md_down) {
+        .descripiton-border {
+          border: 1px solid $gray;
+          padding: 67px 20px; 
+        }      
+      }
+      
+      .descripiton-border--col-full {
+        border: 1px solid $gray;
+        padding: 30px;
+        position: relative;
+        .date {
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: auto;
+          top: -10px;
+          background: white;
+          padding: 0 20px;
+          width: 115px;
+          font-family: $montserrat-font;
+          letter-spacing: 0.04em;
+          @include font-size-rem(14px);
+          color: $gray;
+        }
+        span {
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: auto;
+          bottom: -13px;
+          background: $white;
+          padding: 0 40px;
+          @include font-size-rem (30px);
+          width: 110px;          
+        }
+        .description {
+          background: $soft-gray-10;
+          height: 314px;
+          padding: 0 20px;
+          h4 {
+            font-size: 14px;
+            margin-bottom: 40px;
+            font-weight: 600;
+          }
+          h6 {
+            font-family: $roboto-font;
+            font-weight: 400;
+            padding: 0;
+            margin: 0;
+            line-height: 0;
+            color: $black;
+          }
+          .read-more {
+            margin-top: 40px;
+            margin-bottom: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.pagination-pr {
+    width: 100%;
+    position: relative;
+    padding-bottom: 30px;
+  .next-prev {
+    width: 100%;
+    position: relative;
+    span {
+      @include font-size-rem (12px);
+      color: $light-gray;
+      letter-spacing: 0.16em;
+      margin: 0 20px;
+      position: relative;
+      top: -8px;
+      @include on-event($self: false) {
+        color: $black;
+        transition: .8s all ease;
+      }
+    }
+    ul.pagination {
+      padding: 0;
+      li {
+        display: inline-block;
+        margin: 0 5px;
+        a {
+          @include font-size-rem (14px);
+          font-family: $montserrat-font;
+          border-radius: 50%;
+          color: $light-gray;
+          background: transparent;
+          min-width: 27px;
+          min-height: 27px;
+          line-height: 25px;
+          padding: 0;
+          @include on-event($self: false) {
+            color: $black;
+            border-color: $black;
+          }
+        }
+      }
+    }
+  }
+}
+
+
