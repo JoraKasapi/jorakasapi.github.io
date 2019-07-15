@@ -2229,7 +2229,7 @@ body.soft-black {
   letter-spacing: 0.16em;
 }
 .portfolio-single-wrap .details .share {
-  margin-bottom: 50px;
+  margin-bottom: -40px;
 }
 .portfolio-single-wrap .details .share h6 {
   margin-bottom: 40px;
